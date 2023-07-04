@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'calibri';
+  src: url("../font/calibri-regular.ttf");
+}
+
+@font-face {
+  font-family: 'fashion';
+  src: url('../font/fashion-fetish.ttf');
+}
