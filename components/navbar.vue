@@ -1,6 +1,10 @@
 <script>
+import { Bars3BottomRightIcon } from '@heroicons/vue/24/solid'
 export default {
   props: ['isTransparent'],
+  components: {
+    Bars3BottomRightIcon: Bars3BottomRightIcon
+  },
   data(){
     return {
       dynamicClass: {
@@ -12,11 +16,11 @@ export default {
 </script>
 
 <template>
-  <div class="w-full absolute top-0 left-0" :class="dynamicClass">
+  <div class="w-full absolute top-0 left-0 z-10" :class="dynamicClass">
     <div class="container mx-auto">
       <div class="flex justify-between">
         <figure class="py-3">
-          <svg width="237" height="80" viewBox="0 0 237 80" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg class="w-[150px] md:w-[237px]" width="237" height="80" viewBox="0 0 237 80" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="237" height="80" fill="url(#pattern0)"/>
             <defs>
               <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -26,13 +30,18 @@ export default {
             </defs>
           </svg>
         </figure>
-        <nav class="flex items-center">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0">
+        <nav class="flex items-center pr-2 md:pr-0">
+          <button class="flex md:hidden p-1 rounded-md bg-white text-primary hover:text-white hover:bg-light-primary ease-in-out duration-300">
+            <Bars3BottomRightIcon class="h-9 w-9" />
+          </button>
+          <ul class="font-medium hidden md:flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0">
             <li>
-              <a href="#" class="transition duration-150 font-calibri text-[20px] font-bold block py-2 pl-3 pr-4 text-white hover:text-primary border hover:border-white border-solid" style="border-color: transparent">Inicio</a>
+              <NuxtLink to="/" class="transition duration-150 font-calibri text-[20px] font-bold block py-2 pl-3 pr-4 text-white hover:text-primary border hover:border-white border-solid" style="border-color: transparent">
+                Inicio</NuxtLink>
             </li>
             <li>
-              <a href="#" class="transition duration-150 font-calibri text-[20px] font-bold block py-2 pl-3 pr-4 text-white hover:text-primary border hover:border-white border-solid" style="border-color: transparent">Comprar</a>
+              <NuxtLink to="/comprar" class="transition duration-150 font-calibri text-[20px] font-bold block py-2 pl-3 pr-4 text-white hover:text-primary border hover:border-white border-solid" style="border-color: transparent">
+                Comprar</NuxtLink>
             </li>
             <li>
               <a href="#" class="transition duration-150 font-calibri text-[20px] font-bold block py-2 pl-3 pr-4 text-white hover:text-primary border hover:border-white border-solid" style="border-color: transparent">Como usar</a>
